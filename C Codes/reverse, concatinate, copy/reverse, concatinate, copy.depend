@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1713764129 source:c:\users\asus\onedrive\documents\c codes\reverse, concatinate, copy\main.c
+	<string.h>
+	<stdio.h>
+	<stdio.h>
+
+1716632504 source:e:\c codes\reverse, concatinate, copy\main.c
+	<stdio.h>
+	<string.h>
+

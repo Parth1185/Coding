@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1706155860 source:c:\users\asus\onedrive\documents\c codes\mathematicaloperations\main.c
+	<stdio.h>
+	<stdlib.h>
+
