@@ -27,12 +27,10 @@ import java.util.Scanner;
 //     }
 // }
 
-
-
 // import java.io.*;
 // class April8{
 //     public static void main(String[] args) {
-        
+
 //         File file1 = new File("D:/Coding/demo.txt");        //if no folder is there, then it shows error (java.io.IOException: The system cannot find the path specified)
 
 //         try{
@@ -49,11 +47,10 @@ import java.util.Scanner;
 //     }
 // }
 
-
 // import java.io.*;
 // class April8{
 //     public static void main(String[] args) {
-        
+
 //         File file1 = new File("D:/Coding/Directory1");
 
 //         try{
@@ -73,7 +70,7 @@ import java.util.Scanner;
 // import java.io.*;
 // class April8{
 //     public static void main(String[] args) {
-        
+
 //         File file1 = new File("D:/Coding/Directory1/Directory2/Directory3");
 
 //         try{
@@ -87,7 +84,7 @@ import java.util.Scanner;
 //         catch(Exception exception){
 //             System.out.println(exception);
 //         }
-        
+
 //         System.out.println("Is directory?   : " + file1.isDirectory());
 
 //     }
@@ -96,16 +93,16 @@ import java.util.Scanner;
 // import java.io.*;
 // class April8{
 //     public static void main(String[] args) {
-        
+
 //         File file1 = new File("D:/Web_Development");
 
-        // try{
-        // String names[] = file1.list();
-        // for(String name : names) System.out.println(name);
-        // }
-        // catch(Exception exception){
-        //     System.out.println(exception);
-        // }
+// try{
+// String names[] = file1.list();
+// for(String name : names) System.out.println(name);
+// }
+// catch(Exception exception){
+//     System.out.println(exception);
+// }
 //     }
 // }
 
@@ -131,8 +128,6 @@ import java.util.Scanner;
 //         }
 //     }
 // }
-
-
 
 // public class FileHandling {
 //     public static void main(String[] args) {
@@ -172,7 +167,6 @@ import java.util.Scanner;
 //     }
 // }
 
-
 // class FileHandling{
 //     public static void main(String[] args){
 //         //for creating new file
@@ -209,7 +203,6 @@ import java.util.Scanner;
 //     }
 // }
 
-
 // class FileHandling{
 //     public static void main(String[] args) {
 //         String data = "This is my file content. ";
@@ -227,15 +220,12 @@ import java.util.Scanner;
 //             }
 //             inputStream.close();
 //         }
-    
 
 //         catch(Exception exc){
 //             System.out.println(exc);
 //         }
 //     }
 // }
-
-
 
 // class FileHandling {
 //     public static void main(String[] args) {
@@ -288,8 +278,6 @@ import java.util.Scanner;
 //     }
 // }
 
-
-
 // class FileHandling{
 //     public static void main(String[] args) {
 //         try{
@@ -298,7 +286,7 @@ import java.util.Scanner;
 //             FileWriter fileWriter = new FileWriter("D:/Coding/demo1.txt");
 //             fileWriter.write(data);
 //             fileWriter.close();
-            
+
 //             FileReader fileReader = new FileReader("D:/Coding/demo1.txt");
 //             int i;
 //             while((i=fileReader.read()) != -1){
@@ -313,25 +301,56 @@ import java.util.Scanner;
 //     }
 // }
 
-class FileHandling{
+// class FileHandling{
+//     public static void main(String[] args) {
+//         try{
+
+//             BufferedWriter bw = new BufferedWriter(new FileWriter("D:/Coding/demo1.txt"));
+//             bw.write("This is the first line of my content. ");
+//             bw.newLine();
+//             bw.write("This is the second line of my content. ");
+//             bw.close();
+
+//             BufferedReader br = new BufferedReader(new FileReader("D:/Coding/Demo1.txt"));
+//             String line;
+//             while ((line = br.readLine()) != null){
+//                 System.out.print(line + "\n");
+//             }
+//         }
+
+//         catch (Exception exc){
+//             System.out.println(exc);
+//         }
+//     }
+// }
+
+class FileHandling {
     public static void main(String[] args) {
-        try{
+        int vowelCount = 0;
+        int lineCount = 0;
 
-            BufferedWriter bw = new BufferedWriter(new FileWriter("D:/Coding/demo1.txt"));
-            bw.write("This is the first line of my content. ");
-            bw.newLine();
-            bw.write("This is the second line of my content. ");
-            bw.close();
-
-            BufferedReader br = new BufferedReader(new FileReader("D:/Coding/Demo1.txt"));
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("D:/Coding/demo1.txt"));
             String line;
-            while ((line = br.readLine()) != null){
-                System.out.print(line + "\n");
+
+            while ((line = br.readLine()) != null) {
+                lineCount++;
+                for (int i = 0; i < line.length(); i++) {
+                    char ch = Character.toLowerCase(line.charAt(i));
+                    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                        vowelCount++;
+                    }
+                }
             }
+
+            br.close();
+
+            System.out.println("Total number of lines: " + lineCount);
+            System.out.println("Total number of vowels: " + vowelCount);
         }
 
-        catch (Exception exc){
-            System.out.println(exc);
+        catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
